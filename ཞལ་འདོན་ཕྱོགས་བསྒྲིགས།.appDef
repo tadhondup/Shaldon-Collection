@@ -50,7 +50,7 @@
     <feature name="app-layout-direction" value="ltr"/>
     <feature name="search" value="true"/>
     <feature name="search-input-buttons" value="true"/>
-    <feature name="search-whole-words-show" value="true"/>
+    <feature name="search-whole-words-show" value="false"/>
     <feature name="search-whole-words-default" value="true"/>
     <feature name="search-accents-show" value="false"/>
     <feature name="search-accents-default" value="false"/>
@@ -105,7 +105,7 @@
     <feature name="show-glossary-words" value="true"/>
     <feature name="show-footnotes" value="true"/>
     <feature name="show-cross-refs" value="true"/>
-    <feature name="show-illustrations" value="false"/>
+    <feature name="show-illustrations" value="true"/>
     <feature name="resize-illustrations" value="true"/>
     <feature name="resize-illustrations-width" value="480"/>
     <feature name="backgrounds-crop" value="true"/>
@@ -155,9 +155,15 @@
     <feature name="settings-share-usage-data" value="true"/>
     <feature name="share-app-link" value="false"/>
     <feature name="share-apk-file" value="true"/>
+    <feature name="input-buttons" value=""/>
+    <feature name="scripture-refs-display-from-popup" value="popup"/>
   </features>
 
   <firebase>
+
+    <features type="firebase">
+      <feature name="firebase-analytics" value="false"/>
+    </features>
   </firebase>
 
   <fonts>
@@ -167,13 +173,14 @@
 
     <font family="font1">
       <font-name>Jomolhari</font-name>
+      <display-name>Jomolhari</display-name>
       <filename format="truetype">Jomolhari-alpha3c-0605331.ttf</filename>
       <style-decl property="font-weight" value="normal"/>
       <style-decl property="font-style" value="normal"/>
     </font>
   </fonts>
 
-  <color-scheme name="Dark Orange"/>
+  <color-scheme name="Dark Red"/>
 
   <color-themes>
     <color-theme name="Normal" enabled="true" default="true"/>
@@ -189,6 +196,7 @@
 
   <traits>
     <trait name="has-verse-numbers" value="true"/>
+    <trait name="has-multiple-books" value="true"/>
   </traits>
 
   <markers>
@@ -220,6 +228,10 @@
       <feature name="bc-allow-share-video" value="false"/>
     </features>
 
+    <epub>
+      <cover-filename>D:\Scripture App Builder\Shaldhon Collection\Raw resources\100.png</cover-filename>
+    </epub>
+
     <metadata>
       <meta name="copyright-text" content="Shaldon. 2021"/>
       <meta name="copyright-audio" content="Shaldon. 2021"/>
@@ -232,7 +244,24 @@
       <line-height value="120"/>
       <text-direction value="LTR"/>
       <numeral-system value="Tibetan"/>
+
+      <styles>
+        <style name="div.footer">
+        </style>
+      </styles>
     </styles-info>
+
+    <book id="GLO" type="glossary">
+      <name>GLO</name>
+      <abbrev>GLO</abbrev>
+      <filename>GLO.txt</filename>
+      <source>D:\Scripture App Builder\Shaldhon Collection\Raw resources\C02 matrials\GLO.txt</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
 
     <book id="B001">
       <name>ཞལ་འདོན་ཕྱོགས་བསྒྲིགས།</name>
@@ -741,6 +770,18 @@
         <feature name="lock-orientation" value="none"/>
       </features>
     </book>
+
+    <book id="B043">
+      <name>Maitreya</name>
+      <abbrev>Maitreya</abbrev>
+      <filename>Maitreya.txt</filename>
+      <source>D:\Scripture App Builder\Shaldhon Collection\Raw resources\C02 matrials\Maitreya.txt</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
   </books>
 
   <features type="epub">
@@ -1138,6 +1179,15 @@
           <font-family>system</font-family>
           <trait name="text-direction" value="LTR"/>
         </writing-system>
+
+        <writing-system code="bo" type="interface" enabled="true">
+          <display-names>
+            <form lang="en">Tibetan</form>
+          </display-names>
+          <font-family>system</font-family>
+          <trait name="font-relative-size" value="90"/>
+          <trait name="text-direction" value="LTR"/>
+        </writing-system>
     </writing-systems>
   </interface-languages>
 
@@ -1160,7 +1210,8 @@
       <translation lang="hi">विषय-सूची</translation>
       <translation lang="te">విషయ సూచిక</translation>
       <translation lang="ko">목차</translation>
-      <translation lang="ms">Kandungan</translation>
+      <translation lang="ms">Kandunga</translation>
+      <translation lang="bo">དཀར་ཆག</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Search">
       <translation lang="en">Search</translation>
@@ -1182,6 +1233,7 @@
       <translation lang="te">వెతకండి</translation>
       <translation lang="ko">검색</translation>
       <translation lang="ms">Carian</translation>
+      <translation lang="bo">འཚོལ།</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Layout">
       <translation lang="en">Language &amp; Layout</translation>
@@ -1201,6 +1253,7 @@
       <translation lang="hi">भाषा और लेआउट</translation>
       <translation lang="te">భాష మరియు విన్యాసం</translation>
       <translation lang="ko">언어 &amp; 배치</translation>
+      <translation lang="bo">སྐད་ཡིག བར་འཇུག</translation>
     </translation-mapping>
     <translation-mapping id="Menu_History">
       <translation lang="en">History</translation>
@@ -1216,6 +1269,7 @@
       <translation lang="hi">पुर्व मे देखि गयि वचन</translation>
       <translation lang="te">గతంలో చూసిన వాక్యం</translation>
       <translation lang="ko">사용기록</translation>
+      <translation lang="bo">ལོ་རྒྱུས།</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Settings">
       <translation lang="en">Settings</translation>
@@ -1237,6 +1291,7 @@
       <translation lang="te">సెట్టింగులు</translation>
       <translation lang="ko">설정</translation>
       <translation lang="ms">Tetapan</translation>
+      <translation lang="bo">སྒྲིག་འགོད།</translation>
     </translation-mapping>
     <translation-mapping id="Menu_About">
       <translation lang="en">About</translation>
@@ -1258,6 +1313,7 @@
       <translation lang="te">విషయం</translation>
       <translation lang="ko">정보</translation>
       <translation lang="ms">Tentang</translation>
+      <translation lang="bo">འདིའི་སྐོར།</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Text_Appearance">
       <translation lang="en">Text Appearance</translation>
@@ -1279,6 +1335,7 @@
       <translation lang="te">వాక్య స్వరూపం</translation>
       <translation lang="ko">글꼴 설정</translation>
       <translation lang="ms">Penampilan teks</translation>
+      <translation lang="bo">ཡིག་གཟུགས་ཀྱི་རྣམ་པ།</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Share_App">
       <translation lang="en">Share App</translation>
@@ -1299,11 +1356,13 @@
       <translation lang="te">ఆప్ ని షెర్ చెయ్యండి</translation>
       <translation lang="ko">공유</translation>
       <translation lang="ms">Kangsi App</translation>
+      <translation lang="bo">མཉེན་ཆས་བརྒྱུད་སྐུར།</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Downloads">
       <translation lang="en">Downloads</translation>
       <translation lang="fr">Téléchargements</translation>
       <translation lang="es">Descargas</translation>
+      <translation lang="bo">ཕབ་ལེན།</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Edit">
       <translation lang="en">Edit</translation>
@@ -1325,6 +1384,7 @@
       <translation lang="te">ఎడిట్</translation>
       <translation lang="ko">편집</translation>
       <translation lang="ms">Menyunting</translation>
+      <translation lang="bo">རྩོམ་སྒྲིག</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Users_Add">
       <translation lang="en">Add User</translation>
@@ -1338,6 +1398,7 @@
       <translation lang="te">వినియోగదారులను చేర్చండి</translation>
       <translation lang="ko">사용자 추가</translation>
       <translation lang="es">Añadir usuario</translation>
+      <translation lang="bo">སྤྱོད་མཁན་སྟོན།</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Users_List">
       <translation lang="en">Users</translation>
@@ -1351,6 +1412,7 @@
       <translation lang="hi">उपयोगकर्ताओं</translation>
       <translation lang="te">వినియోగదారులు</translation>
       <translation lang="ko">사용자</translation>
+      <translation lang="bo">སྤྱོད་མཁན།</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Home">
       <translation lang="en">Home</translation>
@@ -1371,6 +1433,7 @@
       <translation lang="te">హోమ్</translation>
       <translation lang="ko">초기화면</translation>
       <translation lang="ms">Muat Turun</translation>
+      <translation lang="bo">མདུན་ངོས།</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Item_Copy">
       <translation lang="en">Copy</translation>
@@ -1399,6 +1462,7 @@
       <translation lang="hi">बुक मार्क</translation>
       <translation lang="te">బుక్ మార్క్స్</translation>
       <translation lang="ko">책갈피</translation>
+      <translation lang="bo">དཔེ་རྟགས།</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Highlights">
       <translation lang="en">Highlights</translation>
@@ -1418,6 +1482,7 @@
       <translation lang="hi">प्रमुख्ताएं</translation>
       <translation lang="te">ప్రత్యేకతలు</translation>
       <translation lang="ko">하이라이트</translation>
+      <translation lang="bo">འདེམ་རྟགས།</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Notes">
       <translation lang="en">Notes</translation>
@@ -1437,6 +1502,7 @@
       <translation lang="hi">टिप्पणियाँ</translation>
       <translation lang="te">గమనికలు</translation>
       <translation lang="ko">노트</translation>
+      <translation lang="bo">མཆན།</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Note_Add">
       <translation lang="en">Add Note</translation>
@@ -1456,6 +1522,7 @@
       <translation lang="hi">नोट जोड़ें</translation>
       <translation lang="te">గమనికను జోడించండి</translation>
       <translation lang="ko">노트 추가</translation>
+      <translation lang="bo">མཆན་ཞོག</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Note_Edit">
       <translation lang="en">Edit Note</translation>
@@ -1475,6 +1542,7 @@
       <translation lang="hi">नोट सम्पादित करें</translation>
       <translation lang="te">నోట్ మార్చు</translation>
       <translation lang="ko">노트 편집</translation>
+      <translation lang="bo">མཆན་སྒྲིག</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Menu_View">
       <translation lang="en">View</translation>
@@ -1494,6 +1562,7 @@
       <translation lang="hi">अवलोकन</translation>
       <translation lang="te">పరిశీలన</translation>
       <translation lang="ko">보기</translation>
+      <translation lang="bo">སྟོན།</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Menu_Delete">
       <translation lang="en">Delete</translation>
@@ -1513,6 +1582,7 @@
       <translation lang="hi">डिलीट</translation>
       <translation lang="te">తొలగించు</translation>
       <translation lang="ko">삭제</translation>
+      <translation lang="bo">སུབ།</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Menu_Edit">
       <translation lang="en">Edit</translation>
@@ -1532,6 +1602,7 @@
       <translation lang="hi">संपादन</translation>
       <translation lang="te">మార్పులు చెయ్యి</translation>
       <translation lang="ko">편집</translation>
+      <translation lang="bo">རྩོམ་སྒྲིག</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Menu_Share">
       <translation lang="en">Share</translation>
@@ -1551,6 +1622,7 @@
       <translation lang="hi">बँटे</translation>
       <translation lang="te">పంచడం</translation>
       <translation lang="ko">공유</translation>
+      <translation lang="bo">བརྒྱུད་སྐུར།</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Sort_Order_Reference">
       <translation lang="en">By Reference</translation>
@@ -1570,6 +1642,7 @@
       <translation lang="hi">संदर्भ से</translation>
       <translation lang="te">రెఫెరెన్సును బట్టి</translation>
       <translation lang="ko">참고문헌별</translation>
+      <translation lang="bo">དཔྱད་གཞི་ལྟར།</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Sort_Order_Date">
       <translation lang="en">By Date</translation>
@@ -1589,6 +1662,7 @@
       <translation lang="hi">तिथि के अनुसार</translation>
       <translation lang="te">తేదీని బట్టి</translation>
       <translation lang="ko">날짜별</translation>
+      <translation lang="bo">ཟླ་ཚེས་ལྟར།</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Sort_Order_Color">
       <translation lang="en">By Color</translation>
@@ -1608,6 +1682,7 @@
       <translation lang="hi">रंग से</translation>
       <translation lang="te">రంగులను బట్టి</translation>
       <translation lang="ko">색깔별</translation>
+      <translation lang="bo">ཚོན་མདོག་ལྟར།</translation>
     </translation-mapping>
     <translation-mapping id="Button_OK">
       <translation lang="en">OK</translation>
@@ -1629,6 +1704,7 @@
       <translation lang="te">ఓకే</translation>
       <translation lang="ko">OK</translation>
       <translation lang="ms">OK</translation>
+      <translation lang="bo">OK</translation>
     </translation-mapping>
     <translation-mapping id="Button_Yes">
       <translation lang="en">Yes</translation>
@@ -1650,6 +1726,7 @@
       <translation lang="te">అవును</translation>
       <translation lang="ko">예</translation>
       <translation lang="ms">Ya</translation>
+      <translation lang="bo">Yes</translation>
     </translation-mapping>
     <translation-mapping id="Button_No">
       <translation lang="en">No</translation>
@@ -1671,6 +1748,7 @@
       <translation lang="te">కాదు</translation>
       <translation lang="ko">아니오</translation>
       <translation lang="ms">Tidak</translation>
+      <translation lang="bo">No</translation>
     </translation-mapping>
     <translation-mapping id="Button_Close">
       <translation lang="en">Close</translation>
@@ -1692,6 +1770,7 @@
       <translation lang="te">మూసి వెయ్యి</translation>
       <translation lang="ko">닫기</translation>
       <translation lang="ms">Tutup</translation>
+      <translation lang="bo">ཁ་རྒྱོབ།</translation>
     </translation-mapping>
     <translation-mapping id="Button_Cancel">
       <translation lang="en">Cancel</translation>
@@ -1713,12 +1792,14 @@
       <translation lang="te">రద్దు చెయ్యి</translation>
       <translation lang="ko">취소</translation>
       <translation lang="ms">Batal</translation>
+      <translation lang="bo">ཕྱིར་འཐེན།</translation>
     </translation-mapping>
     <translation-mapping id="Button_Share">
       <translation lang="en">Share</translation>
       <translation lang="fr">Partager</translation>
       <translation lang="es">Compartir</translation>
       <translation lang="pt">Compartilhar</translation>
+      <translation lang="bo">བརྒྱུད་སྐུར།</translation>
     </translation-mapping>
     <translation-mapping id="Button_Start">
       <translation lang="en">Start</translation>
@@ -1726,6 +1807,7 @@
       <translation lang="es">Iniciar</translation>
       <translation lang="ms">Mula</translation>
       <translation lang="ru">Начать</translation>
+      <translation lang="bo">འགོ་རྩོམ།</translation>
     </translation-mapping>
     <translation-mapping id="Button_Submit">
       <translation lang="en">Submit</translation>
@@ -1746,6 +1828,7 @@
       <translation lang="te">సమర్పించండి</translation>
       <translation lang="ko">제출</translation>
       <translation lang="ms">Kemukakan</translation>
+      <translation lang="bo">ཞུ་འབུལ།</translation>
     </translation-mapping>
     <translation-mapping id="Button_Sign_Up">
       <translation lang="en">Sign Up</translation>
@@ -1753,6 +1836,7 @@
       <translation lang="ms">Daftar</translation>
       <translation lang="es">Inscríbete</translation>
       <translation lang="ru">Зарегистрироваться</translation>
+      <translation lang="bo">ཐོ་གཞུང་བཟོ།</translation>
     </translation-mapping>
     <translation-mapping id="Button_Skip">
       <translation lang="en">Skip</translation>
@@ -1760,18 +1844,21 @@
       <translation lang="es">Omitir</translation>
       <translation lang="pt">Omitir</translation>
       <translation lang="ru">Пропустить</translation>
+      <translation lang="bo">ཕར་མཆོང་།</translation>
     </translation-mapping>
     <translation-mapping id="Button_Read">
       <translation lang="en">Read</translation>
       <translation lang="fr">Lire</translation>
       <translation lang="es">Leer</translation>
       <translation lang="pt">Ler</translation>
+      <translation lang="bo">ཀློག</translation>
     </translation-mapping>
     <translation-mapping id="Button_Listen">
       <translation lang="en">Listen</translation>
       <translation lang="fr">Écouter</translation>
       <translation lang="es">Escuchar</translation>
       <translation lang="pt">Escutar</translation>
+      <translation lang="bo">ཉན།</translation>
     </translation-mapping>
     <translation-mapping id="Button_Create_Image">
       <translation lang="en">Create Image</translation>
@@ -1794,6 +1881,7 @@
       <translation lang="te">ఈ రోజు</translation>
       <translation lang="ko">오늘</translation>
       <translation lang="ms">Hantar</translation>
+      <translation lang="bo">དེ་རིང་།</translation>
     </translation-mapping>
     <translation-mapping id="Date_Yesterday">
       <translation lang="en">Yesterday</translation>
@@ -1810,6 +1898,7 @@
       <translation lang="te">నిన్నటి రోజు</translation>
       <translation lang="ko">어제</translation>
       <translation lang="ms">Semalam</translation>
+      <translation lang="bo">ཁ་སང་།</translation>
     </translation-mapping>
     <translation-mapping id="Grandroid_Load_Fail">
       <translation lang="en">Sorry, the text may not display correctly on this device.</translation>
@@ -1831,6 +1920,7 @@
       <translation lang="te">క్షమించండి, ఈ పరికరంలో వాక్యం సరిగ్గా కనిపించకపోవచ్చు.</translation>
       <translation lang="ko">죄송합니다. 이 기기에서는 본문이 정상적으로 보이지 않을 수 있습니다.</translation>
       <translation lang="ms">Maaf, mesej mungkin tidak dipaparkan dengan betul pada peranti ini.</translation>
+      <translation lang="bo">དགོངས་དག འདི་ནས་དཔེ་ཆ་དེ་ཕལ་ཆེར་སྒྲིག་ཆས་འདིའི་སྒང་ཚད་ལྡན་ཞིག་སྟོན་ཐུབ་ས་མ་རེད།</translation>
     </translation-mapping>
     <translation-mapping id="Grandroid_Load_Fail_42_43_Intel">
       <translation lang="en">Sorry, the text may not display correctly on Intel devices for Android 4.2 or 4.3.</translation>
@@ -1851,6 +1941,7 @@
       <translation lang="hi">क्षमा करें, यह इस एंड्राइड 4.2 या 4.3 के लिए इंटेल के साधन पर ठीक से प्रदर्शित नहीं हो सकता है</translation>
       <translation lang="ko">죄송합니다. 안드로이드 4.2 혹은 4.3 버전을 지원하는 인텔 기기에서는 본문이 정상적으로 보이지 않을 수 있습니다.</translation>
       <translation lang="ms">Maaf, mesej mungkin tidak dipaparkan dengan betul pada peranti Intel untuk Android 4.2 atau 4.3.</translation>
+      <translation lang="bo">དགོངས་དག ཨིན་ཌོ་ 4.2 ཡང་ན་ 4.3 འདིའི་ནང་གི་Intel སྒྲིག་ཆས་འདིའི་སྒང་ནས་ཡིག་ཆ་དེ་ཚད་ལྡན་ཞིག་སྟོན་ཐུབ་ས་མ་རེད།</translation>
     </translation-mapping>
     <translation-mapping id="Grandroid_Load_Fail_42_43_Other">
       <translation lang="en">Sorry, the text may not display correctly on this device for Android 4.2 or 4.3.</translation>
@@ -1871,6 +1962,7 @@
       <translation lang="hi">क्षमा करें, इस साधन  पर एंड्रॉइड 4.2 या 4.3 के लिए ठीक से प्रदर्शित नहीं होगा।</translation>
       <translation lang="ko">죄송합니다. 안드로이드 4.2 혹은 4.3 버전을 지원하는 기기에서는 본문이 정상적으로 보이지 않을 수 있습니다.</translation>
       <translation lang="ms">Maaf, mesej mungkin tidak dipaparkan dengan betul pada peranti ini untuk Android 4.2 atau 4.3.</translation>
+      <translation lang="bo">དགོངས་དག ཨིན་ཌོ་ 4.2 ཡང་ན་ 4.3 འདིའི་ནང་གི་སྒྲིག་ཆས་འདིའི་སྒང་ནས་ཡིག་ཆ་དེ་ཚད་ལྡན་ཞིག་སྟོན་ཐུབ་ས་མ་རེད།</translation>
     </translation-mapping>
     <translation-mapping id="Search">
       <translation lang="en">Search</translation>
@@ -1892,6 +1984,7 @@
       <translation lang="te">వెతకు</translation>
       <translation lang="ko">검색</translation>
       <translation lang="ms">Carian</translation>
+      <translation lang="bo">འཚོལ།</translation>
     </translation-mapping>
     <translation-mapping id="Search_Text_Hint">
       <translation lang="en">Search</translation>
@@ -1913,6 +2006,7 @@
       <translation lang="te">పదాలను వెతకు</translation>
       <translation lang="ko">검색</translation>
       <translation lang="ms">Carian</translation>
+      <translation lang="bo">འཚོལ།</translation>
     </translation-mapping>
     <translation-mapping id="Search_Match_Whole_Words">
       <translation lang="en">Match whole words</translation>
@@ -1934,6 +2028,7 @@
       <translation lang="te">పూర్తి పదాలను వెతకు</translation>
       <translation lang="ko">모든 단어 대조</translation>
       <translation lang="ms">Padan semua perkataan</translation>
+      <translation lang="bo">ཚིག་ཆ་ཚང་མཚུངས་པ།</translation>
     </translation-mapping>
     <translation-mapping id="Search_Match_Accents">
       <translation lang="en">Match accents and tones</translation>
@@ -1954,6 +2049,7 @@
       <translation lang="hi">भाषा और सुर को मिलाये</translation>
       <translation lang="ko">억양과 어조 대조</translation>
       <translation lang="ms">Pandankan loghart dan nada</translation>
+      <translation lang="bo">སྒྲ་གདངས་དང་བརྗོད་ཤུགས་ཆ་ཚང་མཚུངས་པ།</translation>
     </translation-mapping>
     <translation-mapping id="Search_Searching">
       <translation lang="en">Searching...</translation>
@@ -1975,6 +2071,7 @@
       <translation lang="te">వెతకడం జరుగుతుంది....</translation>
       <translation lang="ko">검색중...</translation>
       <translation lang="ms">Mencari...</translation>
+      <translation lang="bo">འཚོལ་བཞིན་པ་་་</translation>
     </translation-mapping>
     <translation-mapping id="Search_Number_Found">
       <translation lang="en">Found: %,d</translation>
@@ -1996,6 +2093,7 @@
       <translation lang="te">%,d దొరికినవి</translation>
       <translation lang="ko">검색결과: %,d</translation>
       <translation lang="ms">Jumpa: %,d</translation>
+      <translation lang="bo">རྙེད་པ་%</translation>
     </translation-mapping>
     <translation-mapping id="Search_No_Matches_Found">
       <translation lang="en">No matches found</translation>
@@ -2017,6 +2115,7 @@
       <translation lang="te">పోలికలు దొరకలేదు</translation>
       <translation lang="ko">찾을 수 없음</translation>
       <translation lang="ms">Tida pad anan</translation>
+      <translation lang="bo">འདྲ་བོ་ཞིག་མི་འདུག</translation>
     </translation-mapping>
     <translation-mapping id="Search_Again_Button">
       <translation lang="en">Search</translation>
@@ -2038,6 +2137,7 @@
       <translation lang="te">వెతకు</translation>
       <translation lang="ko">검색</translation>
       <translation lang="ms">Carian</translation>
+      <translation lang="bo">འཚོལ།</translation>
     </translation-mapping>
     <translation-mapping id="Search_Cancel_Button">
       <translation lang="en">Cancel</translation>
@@ -2059,6 +2159,7 @@
       <translation lang="te">రద్దు చెయ్యి</translation>
       <translation lang="ko">취소</translation>
       <translation lang="ms">Batal</translation>
+      <translation lang="bo">ཕྱིར་འཐེན།</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Download_Title">
       <translation lang="en">Audio Download</translation>
@@ -2080,6 +2181,7 @@
       <translation lang="te">ఆడియో డౌన్లోడ్</translation>
       <translation lang="ko">오디오 파일 내려받기</translation>
       <translation lang="ms">Muat turun audio</translation>
+      <translation lang="bo">སྒྲ་ཕབ་ལེན།</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Download_Confirm">
       <translation lang="en">Download audio file?</translation>
@@ -2101,6 +2203,7 @@
       <translation lang="te">ఆడియో ఫైల్ డౌన్లోడ్ చేయాలా?</translation>
       <translation lang="ko">오디오 파일을 내려 받으시겠습니까?</translation>
       <translation lang="ms">Muat turun fail audio</translation>
+      <translation lang="bo">སྒྲའི་ཡིག་ཆ་ཕབ་ལེན་བྱ་རྒྱུ་ཡིན་ནམ།</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Download_Auto">
       <translation lang="en">Download automatically from now on</translation>
@@ -2122,6 +2225,7 @@
       <translation lang="te">ఇప్పటి నుండి ఆటోమేటిక్గా డౌన్లోడ్</translation>
       <translation lang="ko">지금부터 자동으로 내려 받습니다.</translation>
       <translation lang="ms">Muat turun secara automatik dari sekarang</translation>
+      <translation lang="bo">ད་ནས་རང་འགུལ་གྱིས་ཕབ་ལེན་བྱེད།</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Download_Connect">
       <translation lang="en">To download audio files, please connect to the internet.</translation>
@@ -2142,6 +2246,7 @@
       <translation lang="hi">ऑडियो फ़ाइलों को डाउनलोड करने के लिए, कृपया इंटरनेट से कनेक्ट करें</translation>
       <translation lang="te">ఆడియో ఫైల్లను డౌన్లోడ్ చేయడానికి, దయచేసి ఇంటర్నెట్కు కనెక్ట్ చేయండి.</translation>
       <translation lang="ko">오디오 파일을 내려 받으려면, 인터넷에 접속하세요.</translation>
+      <translation lang="bo">ཡིག་ཆ་ཕབ་ལེན་བྱེད་ན་དྲ་རྒྱར་མཐུད་དགོས།</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Download_Error">
       <translation lang="en">Download Error:</translation>
@@ -2162,10 +2267,12 @@
       <translation lang="hi">डाउनलोड त्रुटि</translation>
       <translation lang="te">డౌన్లోడ్ లోపం</translation>
       <translation lang="ko">내려받기 오류</translation>
+      <translation lang="bo">ཕབ་ལེན་ལ་གནད་དོན་བྱུང་སོང་།</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Download_Timeout">
       <translation lang="en">Timed out connecting to audio server.</translation>
       <translation lang="fr">Délai de connexion au serveur audio.</translation>
+      <translation lang="bo">སྒྲའི་གསོག་སྣོད་ལ་མཐུད་པའི་དུས་ཚོད་ཡོལ་སོང་།</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Downloading">
       <translation lang="en">Downloading %book %chapter...</translation>
@@ -2187,6 +2294,7 @@
       <translation lang="te">%పుస్తకం %అధ్యాయము డౌన్లోడ్ చేస్తోంది ...</translation>
       <translation lang="ko">% %장 내려받는 중...</translation>
       <translation lang="ms">Muat turun %book %chapter...</translation>
+      <translation lang="bo">ཕབ་ལེན་བྱེད་བཞིན་པའི་དཔེ་ཆའི་བརྒྱ་ཆ་% ལེའུའི་བརྒྱ་ཆ་%....</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Check_Connection">
       <translation lang="en">Please check your internet connection.</translation>
@@ -2208,6 +2316,7 @@
       <translation lang="te">దయచేసి మీ ఇంటర్నెట్ కనెక్షన్ తనిఖీ చేయండి.</translation>
       <translation lang="ko">인터넷 연결을 확인하십시오.</translation>
       <translation lang="ms">Sila semak sambungan internet anda</translation>
+      <translation lang="bo">དྲ་རྒྱར་མཐུད་ཡོད་མེད་ལྟོས་དང་།</translation>
     </translation-mapping>
     <translation-mapping id="Audio_File_Not_Found">
       <translation lang="en">Audio file not found</translation>
@@ -2229,6 +2338,7 @@
       <translation lang="te">ఆడియో ఫైల్ దొరకలేదు</translation>
       <translation lang="ko">오디오 파일 찾을 수 없음</translation>
       <translation lang="ms">Fail audio tidak dijumpai</translation>
+      <translation lang="bo">སྒྲའི་ཡིག་ཆ་རྙེད་མ་སོང་།</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Fail_DBT_Location">
       <translation lang="en">Failed to get audio download information</translation>
@@ -2249,6 +2359,7 @@
       <translation lang="hi">ऑडियो डाउनलोड जानकारी प्राप्त करने में विफल</translation>
       <translation lang="te">ఆడియో డౌన్లోడ్ సమాచారాన్ని పొందడంలో విఫలం</translation>
       <translation lang="ko">오디오 파일 내려받기 정보 습득 실패</translation>
+      <translation lang="bo">སྒྲ་ཕབ་ལེན་གྱི་གནས་ཚུལ་རྙེད་མ་སོང་།</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Looking_For_File">
       <translation lang="en">Looking for audio file on your device...</translation>
@@ -2261,12 +2372,14 @@
       <translation lang="ms">Mencari fail audio pada peranti anda...</translation>
       <translation lang="es">Buscando el archivo de audio en su dispositivo...</translation>
       <translation lang="ru">Поиск аудиофайла на вашем устройстве</translation>
+      <translation lang="bo">ཁྱེད་ཀྱི་མ་ལག་སྒང་ནས་སྒྲའི་ཡིག་ཆ་འཚོལ་བཞིན་ཡོད།</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Creating_Audio">
       <translation lang="en">Creating audio file...</translation>
       <translation lang="fr">Créer fichier audio...</translation>
       <translation lang="es">Creando un archivo de audio...</translation>
       <translation lang="ru">Создание аудиофайла…</translation>
+      <translation lang="bo">སྒྲའི་ཡིག་ཆ་བཟོ་བཞིན་ཡོད།</translation>
     </translation-mapping>
     <translation-mapping id="Video_Download_Title">
       <translation lang="en">Video Download</translation>
@@ -2279,6 +2392,7 @@
       <translation lang="ms">Muat turun video</translation>
       <translation lang="es">Descarga de video</translation>
       <translation lang="ru">Загрузка видео</translation>
+      <translation lang="bo">བརྙན་ཕབ་ལེན།</translation>
     </translation-mapping>
     <translation-mapping id="Video_Download_Confirm">
       <translation lang="en">Download video file?</translation>
@@ -2291,6 +2405,7 @@
       <translation lang="ms">Muat turun fail Video?</translation>
       <translation lang="es">¿Descargar el archivo de vídeo?</translation>
       <translation lang="ru">Загрузить видео?</translation>
+      <translation lang="bo">བརྙན་ཕབ་ལེན་བྱ་རྒྱུ་ཡིན་ནམ།</translation>
     </translation-mapping>
     <translation-mapping id="Video_Downloading">
       <translation lang="en">Downloading video...</translation>
@@ -2303,6 +2418,7 @@
       <translation lang="ms">Muat turun video</translation>
       <translation lang="es">Descargando el video...</translation>
       <translation lang="ru">Видео загружается…</translation>
+      <translation lang="bo">བརྙན་ཕབ་ལེན་བྱེད་བཞིན་ཡོད།</translation>
     </translation-mapping>
     <translation-mapping id="Video_Downloaded">
       <translation lang="en">Video downloaded</translation>
@@ -2315,6 +2431,7 @@
       <translation lang="ms">Video yang dimuat turun</translation>
       <translation lang="es">Video descargado</translation>
       <translation lang="ru">Видео загружено</translation>
+      <translation lang="bo">བརྙན་ཕབ་ལེན་བྱས་ཟིན།</translation>
     </translation-mapping>
     <translation-mapping id="Video_Looking_For_File">
       <translation lang="en">Looking for video file on your device...</translation>
@@ -2327,12 +2444,14 @@
       <translation lang="ms">Mencari fail video pada peranti anda...</translation>
       <translation lang="es">Buscando el archivo de video en su dispositivo...</translation>
       <translation lang="ru">Поиск видео на вашем устройстве…</translation>
+      <translation lang="bo">ཁྱེད་ཀྱི་སྒྲིག་ཆས་སྒང་ནས་བརྙན་གྱི་ཡིག་ཆ་འཚོལ་བཞིན་ཡོད།</translation>
     </translation-mapping>
     <translation-mapping id="Video_Creating_Video">
       <translation lang="en">Creating video...</translation>
       <translation lang="fr">Créer vidéo...</translation>
       <translation lang="es">Creando el video...</translation>
       <translation lang="ru">Создание видео…</translation>
+      <translation lang="bo">བརྙན་བཟོ་བཞིན་ཡོད།</translation>
     </translation-mapping>
     <translation-mapping id="Selector_Book">
       <translation lang="en">BOOK</translation>
@@ -2347,6 +2466,7 @@
       <translation lang="fa">کتاب</translation>
       <translation lang="ko">권</translation>
       <translation lang="ru">КНИГА</translation>
+      <translation lang="bo">དཔེ་ཆ།</translation>
     </translation-mapping>
     <translation-mapping id="Selector_Chapter">
       <translation lang="en">CHAPTER</translation>
@@ -2366,6 +2486,7 @@
       <translation lang="hi">अध्याय</translation>
       <translation lang="te">అధ్యాయం</translation>
       <translation lang="ko">장</translation>
+      <translation lang="bo">ལེའུ།</translation>
     </translation-mapping>
     <translation-mapping id="Selector_Verse">
       <translation lang="en">VERSE</translation>
@@ -2385,6 +2506,7 @@
       <translation lang="hi">वचन</translation>
       <translation lang="te">వచనం</translation>
       <translation lang="ko">절</translation>
+      <translation lang="bo">ཤོ་ལོ་ཀ</translation>
     </translation-mapping>
     <translation-mapping id="Share_Apk_File">
       <translation lang="en">Share App Installer File</translation>
@@ -2404,6 +2526,7 @@
       <translation lang="hi">स्थापनाकर्ता पंक्ति के ऐप को साझा करे</translation>
       <translation lang="te">ఆప్ ఇన్స్‌స్టాలర్‌ని షేర్ చేయండి</translation>
       <translation lang="ko">앱 설치 파일 공유하기</translation>
+      <translation lang="bo">མཉེན་ཆས་འཇུག་སྤྲོད་ཀྱི་ཡིག་ཆ་བརྒྱུད་སྐུར།</translation>
     </translation-mapping>
     <translation-mapping id="Share_Apk_File_Via">
       <translation lang="en">Share App via</translation>
@@ -2423,6 +2546,7 @@
       <translation lang="hi">एप्लिकेशन के माध्यम से साझा करें</translation>
       <translation lang="te">ఆప్ ద్వారా షేర్ చేయండి</translation>
       <translation lang="ko">앱 공유</translation>
+      <translation lang="bo">མཉེན་ཆས་བརྒྱུད་སྐུར་གྱི་བརྒྱུད་ལམ།</translation>
     </translation-mapping>
     <translation-mapping id="Share_App_Link">
       <translation lang="en">Share Link to App on Google Play</translation>
@@ -2441,6 +2565,7 @@
       <translation lang="hi">गूगल प्ले के ऐप के  लिंक को साझा करें</translation>
       <translation lang="te">గూగుల్ ప్లేలో షార్ లింక్ భాగస్వామ్యం</translation>
       <translation lang="ko">구글 플레이에서 앱 링크 공유하기</translation>
+      <translation lang="bo">མཉེན་ཆས་ཀྱི་དྲ་ཐག་ Google Play སྒང་ལ་བརྒྱུད་སྐུར་བྱ་རྒྱུ་ཡིན་ནམ།</translation>
     </translation-mapping>
     <translation-mapping id="Share_App_Link_Recommend">
       <translation lang="en">I can recommend this app:</translation>
@@ -2460,6 +2585,7 @@
       <translation lang="hi">मै इस ऐप की अनुशंसा करता हूँ</translation>
       <translation lang="te">నేను ఈ ఆప్‌ని సిఫార్సు చేయవచ్చ:</translation>
       <translation lang="ko">이 앱을 추천합니다:</translation>
+      <translation lang="bo">ངས་མཉེན་ཆས་འདི་མཚམས་སྦྱོར་བྱ་ཆོག</translation>
     </translation-mapping>
     <translation-mapping id="Share_App_Link_Via">
       <translation lang="en">Share Link via</translation>
@@ -2479,6 +2605,7 @@
       <translation lang="hi">लिंक के माध्यम से साझा करें</translation>
       <translation lang="te">లింక్ ద్వారా షేర్ చేయండి</translation>
       <translation lang="ko">링크를 통해 공유하기</translation>
+      <translation lang="bo">དྲ་ཐག་བརྒྱུད་སྐུར་གྱི་བརྒྱུད་ལམ།</translation>
     </translation-mapping>
     <translation-mapping id="Share_Via">
       <translation lang="en">Share via</translation>
@@ -2498,30 +2625,35 @@
       <translation lang="hi">के माध्यम से बाँटे</translation>
       <translation lang="te">దీని ద్వారా షేర్ చేయండి</translation>
       <translation lang="ko">공유</translation>
+      <translation lang="bo">བརྒྱུད་སྐུར་གྱི་བརྒྱུད་ལམ།</translation>
     </translation-mapping>
     <translation-mapping id="Share_Text">
       <translation lang="en">Share Text</translation>
       <translation lang="fr">Partager texte</translation>
       <translation lang="es">Compartir texto</translation>
       <translation lang="ru">Поделиться текстом</translation>
+      <translation lang="bo">ཡིག་ཆ་བརྒྱུད་སྐུར།</translation>
     </translation-mapping>
     <translation-mapping id="Share_Audio">
       <translation lang="en">Share Audio</translation>
       <translation lang="fr">Partager audio</translation>
       <translation lang="es">Compartir Audio</translation>
       <translation lang="ru">Поделиться аудио</translation>
+      <translation lang="bo">སྒྲ་བརྒྱུད་སྐུར།</translation>
     </translation-mapping>
     <translation-mapping id="Share_Image">
       <translation lang="en">Share Image</translation>
       <translation lang="fr">Partager image</translation>
       <translation lang="es">Compartir imagen</translation>
       <translation lang="ru">Поделиться изображением</translation>
+      <translation lang="bo">འདྲ་པར་བརྒྱུད་སྐུར།</translation>
     </translation-mapping>
     <translation-mapping id="Share_Video">
       <translation lang="en">Share Video</translation>
       <translation lang="fr">Partager vidéo</translation>
       <translation lang="es">Compartir Video</translation>
       <translation lang="ru">Поделиться видео</translation>
+      <translation lang="bo">བརྙན་བརྒྱུད་སྐུར།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Title">
       <translation lang="en">Settings</translation>
@@ -2542,6 +2674,7 @@
       <translation lang="te">సెట్టింగులు</translation>
       <translation lang="ko">설정</translation>
       <translation lang="ms">Tetapan</translation>
+      <translation lang="bo">སྒྲིག་འགོད།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Category_Text_Display">
       <translation lang="en">Text Display</translation>
@@ -2562,6 +2695,7 @@
       <translation lang="te">వాక్య ప్రదర్శన</translation>
       <translation lang="ko">본문 보기 설정</translation>
       <translation lang="ms">Paparan Teks</translation>
+      <translation lang="bo">ཡིག་རྐྱང་སྟོན།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Category_Navigation">
       <translation lang="en">Navigation</translation>
@@ -2582,6 +2716,7 @@
       <translation lang="te">చోదనం</translation>
       <translation lang="ko">안내</translation>
       <translation lang="ms">Navigasi</translation>
+      <translation lang="bo">ཐད་འཚོལ།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Category_Notifications">
       <translation lang="en">Notifications</translation>
@@ -2589,6 +2724,7 @@
       <translation lang="es">Notificaciones</translation>
       <translation lang="ms">Pemberitahuan</translation>
       <translation lang="ru">Уведомления</translation>
+      <translation lang="bo">བརྡ་ཁྱབ།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Category_Audio">
       <translation lang="en">Audio</translation>
@@ -2605,6 +2741,7 @@
       <translation lang="te">ఆడియో</translation>
       <translation lang="ko">오디오</translation>
       <translation lang="ms">Audio</translation>
+      <translation lang="bo">སྒྲ།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Category_Interface">
       <translation lang="en">User Interface</translation>
@@ -2625,6 +2762,7 @@
       <translation lang="te">వినియోగదారుని మధ్యవర్తిత్వం</translation>
       <translation lang="ko">사용자 설정</translation>
       <translation lang="ms">Antara pengguna</translation>
+      <translation lang="bo">སྤྱོད་མཁན་གྱི་མདུན་ངོས།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Book_Selection">
       <translation lang="en">Book selection</translation>
@@ -2644,6 +2782,7 @@
       <translation lang="hi">पुस्तक का चयन</translation>
       <translation lang="te">పుస్తకం ఎంపిక</translation>
       <translation lang="ko">선택</translation>
+      <translation lang="bo">དེབ་འདེམ་གསེས།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Book_Selection_List">
       <translation lang="en">List of book names</translation>
@@ -2663,6 +2802,7 @@
       <translation lang="hi">पुस्तक नामों की सूची</translation>
       <translation lang="te">పుస్తకం పేర్ల జాబితా</translation>
       <translation lang="ko">목록별</translation>
+      <translation lang="bo">མཚན་བྱང་བསྟར་ཕྲེང་།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Book_Selection_Grid">
       <translation lang="en">Grid of book abbreviations</translation>
@@ -2682,6 +2822,7 @@
       <translation lang="hi">पुस्तक संक्षिप्त की सूची</translation>
       <translation lang="te">పుస్తక నిర్వచనాలు</translation>
       <translation lang="ko">약자별</translation>
+      <translation lang="bo">དྲྭ་མིག་ལྟར།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Red_Letters">
       <translation lang="en">Red letters</translation>
@@ -2700,6 +2841,7 @@
       <translation lang="hi">लाल अक्षर</translation>
       <translation lang="te">ఎరుపు అక్షరాలు</translation>
       <translation lang="ko">붉은 글자</translation>
+      <translation lang="bo">ཡིག་འབྲུ་དམར་པོ།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Red_Letters_Summary">
       <translation lang="en">Show the words of Jesus in red</translation>
@@ -2718,6 +2860,7 @@
       <translation lang="hi">यीशु के शब्दों को लाल रंग में दिखाओ</translation>
       <translation lang="te">యేసు పలికిన మాటలు ఎరుపు రంగులో చూపించు</translation>
       <translation lang="ko">예수님의 말씀을 붉은 색으로 표기</translation>
+      <translation lang="bo">ཡེ་ཤུ་མ་ཤི་ཀའི་མཚན་(Jesus)ཚིག་རྣམས་ཚོན་མདོག་དམར་པོའི་ནང་སྟོན།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Show_Border">
       <translation lang="en">Show border</translation>
@@ -2737,6 +2880,7 @@
       <translation lang="te">పరిమితి చూపించు</translation>
       <translation lang="ko">테두리 표시</translation>
       <translation lang="ms">Tunjuk sempadan</translation>
+      <translation lang="bo">མཐའ་སྒྲོམ་སྟོན།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Show_Border_Summary">
       <translation lang="en">Show decorative border around text</translation>
@@ -2756,6 +2900,7 @@
       <translation lang="te">వాక్యము చుట్టూ అలంకరణ పరిమితిని చూపించు</translation>
       <translation lang="ko">본문 주위 꾸미는 테두리 표시</translation>
       <translation lang="ms">Tunjukkan sempadan hiasan sekitar teks</translation>
+      <translation lang="bo">ཡི་གེའི་མཐའ་རྒྱན་སྟོན།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Numbers">
       <translation lang="en">Show verse numbers</translation>
@@ -2775,6 +2920,7 @@
       <translation lang="hi">वचन संख्या दिखाएं</translation>
       <translation lang="te">వచనం సంఖ్యలను చూపించు</translation>
       <translation lang="ko">구절 숫자 표기</translation>
+      <translation lang="bo">ཤོ་ལོ་ཀའི་ཨང་སྟོན།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Layout">
       <translation lang="en">Verse layout</translation>
@@ -2793,6 +2939,7 @@
       <translation lang="hi">वचन अभिन्यास (लेओउट)</translation>
       <translation lang="te">వచనం విన్యాసం</translation>
       <translation lang="ko">구절 배치</translation>
+      <translation lang="bo">ཤོ་ལོ་ཀའི་བར་འཇུག</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Layout_Paragraphs">
       <translation lang="en">Verses in paragraphs</translation>
@@ -2811,6 +2958,7 @@
       <translation lang="hi">पैराग्राफ में आयत</translation>
       <translation lang="te">వచనాలు ప్యారగ్రాపుల్లో</translation>
       <translation lang="ko">단락별 보기</translation>
+      <translation lang="bo">ལེའུའི་ནང་གི་ཤོ་ལོ་ཀ</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Layout_One_Per_Line">
       <translation lang="en">One verse per line</translation>
@@ -2829,6 +2977,7 @@
       <translation lang="hi">प्रति पंक्ति एक कविता</translation>
       <translation lang="te">ఒక వరుసలో ఒక వచనం</translation>
       <translation lang="ko">줄당 한 구절</translation>
+      <translation lang="bo">ཤོ་ལོ་ཀ་རེར་ཐིག་ཕྲེང་རེ།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Selection">
       <translation lang="en">Show verse selector</translation>
@@ -2848,6 +2997,7 @@
       <translation lang="hi">श्वेयर चयनकर्ता दिखाएं</translation>
       <translation lang="te">వచనం ఎంపికను చూపించు</translation>
       <translation lang="ko">구절 선택창 표기</translation>
+      <translation lang="bo">ཤོ་ལོ་ཀའི་འདེམ་རྟགས་སྟོན།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Interface_Language">
       <translation lang="en">Language</translation>
@@ -2868,6 +3018,7 @@
       <translation lang="te">భాష</translation>
       <translation lang="ko">언어</translation>
       <translation lang="ms">Bahasa</translation>
+      <translation lang="bo">སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Layout_Direction">
       <translation lang="en">Layout direction</translation>
@@ -2887,6 +3038,7 @@
       <translation lang="hi">लेआउट दिशा</translation>
       <translation lang="te">విన్యాస నిర్ధేశం</translation>
       <translation lang="ko">배치 방향</translation>
+      <translation lang="bo">ཀློག་ཕྱོགས།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Layout_Direction_LTR">
       <translation lang="en">Left to Right</translation>
@@ -2907,6 +3059,7 @@
       <translation lang="te">ఎడమ నుండి కుడికి</translation>
       <translation lang="ko">좌에서 우로</translation>
       <translation lang="ms">Kiri ke Kanan</translation>
+      <translation lang="bo">གཡོན་ནས་གཡས།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Layout_Direction_RTL">
       <translation lang="en">Right to Left</translation>
@@ -2927,6 +3080,7 @@
       <translation lang="te">కుడి నుండి ఎడమకు</translation>
       <translation lang="ko">우에서 좌로</translation>
       <translation lang="ms">Kanan ke Kiri</translation>
+      <translation lang="bo">གཡས་ནས་གཡོན།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Layout_Direction_Interface_Language">
       <translation lang="en">Direction of interface language</translation>
@@ -2946,6 +3100,7 @@
       <translation lang="te">మధ్యవర్తి భాష యొక్క నిర్ధేశం</translation>
       <translation lang="ko">설정 언어대로</translation>
       <translation lang="ms">Hala tuju antara muka Bahasa</translation>
+      <translation lang="bo">སྐད་ཡིག་གི་ཀློག་ཕྱོགས།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Layout_Direction_Text">
       <translation lang="en">Direction of current text</translation>
@@ -2965,6 +3120,7 @@
       <translation lang="te">ప్రస్తుత వాక్యభాగం యొక్క నిర్ధేశం</translation>
       <translation lang="ko">현재 본문대로</translation>
       <translation lang="ms">Arahan teks semasa</translation>
+      <translation lang="bo">ཡིག་ཆ་འདིའི་ཀློག་ཕྱོགས།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Highlight_Phrase">
       <translation lang="en">Highlight synchronized phrases</translation>
@@ -2983,6 +3139,7 @@
       <translation lang="te">సమకాలీకరించబడిన పదబంధాలను హైలైట్ చేయండి</translation>
       <translation lang="ko">음성 구절 하이라이트</translation>
       <translation lang="ms">Serlahkan frasa disegerakkan</translation>
+      <translation lang="bo">ཚིག་དུམ་ལ་འདེམ་རྟགས་བཀོད་པ།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Highlight_Phrase_Summary">
       <translation lang="en">Show current phrase in yellow when playing audio</translation>
@@ -3000,6 +3157,7 @@
       <translation lang="te">ఆడియోను ప్లే చేస్తున్నప్పుడు పసుపు రంగులో ప్రస్తుత పదబంధాన్ని చూపించు</translation>
       <translation lang="ko">오디오 재생시 해당 구절들 노란색으로 표시하기</translation>
       <translation lang="ms">Tunjukkan frasa semasa dengan warna kuning apabila memainkan audio</translation>
+      <translation lang="bo">སྒྲ་བཏང་བ་དང་ལྷན་ད་ལྟའི་ཚིག་དུམ་དེ་ཚོན་མདོག་སེར་པོའི་ནང་སྟོན།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Speed">
       <translation lang="en">Playback speed</translation>
@@ -3016,6 +3174,7 @@
       <translation lang="te">ప్లేబ్యాక్ వేగం</translation>
       <translation lang="ko">재생 속도</translation>
       <translation lang="ms">Kelajuan main semula</translation>
+      <translation lang="bo">སྒྲའི་མགྱོགས་ཚད།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Speed_Normal">
       <translation lang="en">Normal</translation>
@@ -3032,6 +3191,7 @@
       <translation lang="te">సాధారణ</translation>
       <translation lang="ko">보통</translation>
       <translation lang="ms">Normal</translation>
+      <translation lang="bo">རྒྱུན་ལྡན།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Access_Method">
       <translation lang="en">Audio download or streaming</translation>
@@ -3060,6 +3220,7 @@
       <translation lang="te">ఆడియో ఫైల్ డౌన్లోడ్</translation>
       <translation lang="ko">오디오 파일 내려받기</translation>
       <translation lang="ms">Serlahkan frasa disegerakkan</translation>
+      <translation lang="bo">སྒྲའི་ཡིག་ཆ་ཕབ་ལེན།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Download_Prompt">
       <translation lang="en">Always ask before downloading</translation>
@@ -3076,6 +3237,7 @@
       <translation lang="te">డౌన్లోడ్ చేయడానికి ముందు అడుగుము</translation>
       <translation lang="ko">내려받기 전 항상 묻기</translation>
       <translation lang="ms">Sentiasa tanya sebelum memuat turun</translation>
+      <translation lang="bo">ཕབ་ལེན་མ་བྱས་སྔོན་རྒྱུན་དུ་དྲི་བ་ཕྲིས།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Download_Automatic">
       <translation lang="en">Download automatically</translation>
@@ -3092,6 +3254,7 @@
       <translation lang="te">ఆటోమేటిక్ డౌన్లోడ్ చేయండి</translation>
       <translation lang="ko">자동 내려받기</translation>
       <translation lang="ms">Muat turun secara automatik</translation>
+      <translation lang="bo">རང་འགུལ་གྱིས་ཕབ་ལེན།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Download_Automatic_Wifi">
       <translation lang="en">Download automatically if using WiFi</translation>
@@ -3108,6 +3271,7 @@
       <translation lang="te">వైఫైని (Wi-Fi) ఉపయోగించి డౌన్లోడ్ చేయండి</translation>
       <translation lang="ko">와이파이(WiFi) 사용시 자동으로 내려받기</translation>
       <translation lang="ms">Muat turun secara automatik jika menggunakan WiFi</translation>
+      <translation lang="bo">སྐུད་མེད་དྲ་ལ་མཐུད་དུས་རང་འགུལ་གྱིས་ཕབ་ལེན་བྱེད།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Keep_Screen_On">
       <translation lang="en">Keep screen on</translation>
@@ -3124,6 +3288,7 @@
       <translation lang="te">స్క్రీన్‌ని వినియోగంలో ఉంచండి</translation>
       <translation lang="ko">화면 자동 꺼짐 해제</translation>
       <translation lang="ms">Teruskan skrin</translation>
+      <translation lang="bo">འཆར་ངོས་མུ་མཐུད་ནས་སྟོན།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Share_Usage_Data">
       <translation lang="en">Share usage data</translation>
@@ -3140,84 +3305,99 @@
       <translation lang="ko">데이터 사용량 공유하기</translation>
       <translation lang="ms">Kongsi data penggunaan</translation>
       <translation lang="ru">Поделиться данными об использовании</translation>
+      <translation lang="bo">བཀོལ་བྱའི་ཡིག་ཆ་བརྒྱུད་སྐུར།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Of_The_Day">
       <translation lang="en">Verse of the day</translation>
       <translation lang="fr">Verset du jour</translation>
       <translation lang="es">Versículo del día</translation>
       <translation lang="ru">Цитата дня</translation>
+      <translation lang="bo">ཉིན་དེའི་ཤོ་ལོ་ཀ</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Of_The_Day_Time">
       <translation lang="en">Time for verse of the day</translation>
       <translation lang="fr">L&apos;heure du verset du jour</translation>
       <translation lang="es">Tiempo para el versículo del día</translation>
       <translation lang="ru">Время цитаты дня</translation>
+      <translation lang="bo">ཉིན་རེའི་ཤོ་ལོ་ཀའི་དུས་ཚོད།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Of_The_Day_Book_Collection">
       <translation lang="en">Translation for verse of the day</translation>
       <translation lang="fr">Traduction pour le verset du jour</translation>
       <translation lang="es">Traducción para el versículo del día</translation>
       <translation lang="ru">Выбор языка для цитаты дня</translation>
+      <translation lang="bo">ཉིན་རེའི་ཤོ་ལོ་ཀའི་འགྱུར།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Daily_Reminder">
       <translation lang="en">Daily reminder</translation>
       <translation lang="fr">Rappel quotidien</translation>
       <translation lang="es">Recordatorio diario</translation>
       <translation lang="ru">Ежедневное напоминание</translation>
+      <translation lang="bo">ཉིན་རེའི་དྲན་གསོ།</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Daily_Reminder_Time">
       <translation lang="en">Time for daily reminder</translation>
       <translation lang="fr">L&apos;heure du rappel quotidien</translation>
       <translation lang="es">Tiempo para el recordatorio diario</translation>
       <translation lang="ru">Время ежедневного напоминания</translation>
+      <translation lang="bo">ཉིན་རེའི་དྲན་གསོའི་དུས་ཚོད།</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Verse_Of_The_Day_Title">
       <translation lang="en">Verse of the Day</translation>
       <translation lang="fr">Verset du jour</translation>
       <translation lang="es">Versículo del día</translation>
       <translation lang="ru">Цитата дня</translation>
+      <translation lang="bo">ཉིན་དེའི་ཤོ་ལོ་ཀ</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Daily_Reminder_Title">
       <translation lang="en">Daily Reminder</translation>
       <translation lang="fr">Rappel quotidien</translation>
       <translation lang="es">Recordatorio diario</translation>
       <translation lang="ru">Ежедневное напоминание</translation>
+      <translation lang="bo">ཉིན་རེའི་དྲན་གསོ།</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Daily_Reminder_Message">
       <translation lang="en">Time to read or listen to God&apos;s Word</translation>
       <translation lang="fr">C&apos;est le moment de lire ou d&apos;écouter la Parole de Dieu</translation>
       <translation lang="es">Tiempo para leer o escuchar la Palabra de Dios</translation>
       <translation lang="ru">Время читать или слушать Писание</translation>
+      <translation lang="bo">དཀོན་མཆོག་གི་བཀའ་ཉན་ཀློག་གི་དུས་ཚོད།</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Messages">
       <translation lang="en">Messages</translation>
       <translation lang="fr">Messages</translation>
+      <translation lang="bo">འཕྲིན་ཐུང་།</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Verse_Of_The_Day">
       <translation lang="en">Verse of the Day</translation>
       <translation lang="fr">Verset du jour</translation>
       <translation lang="es">Versículo del día</translation>
+      <translation lang="bo">ཉིན་དེའི་ཤོ་ལོ་ཀ</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Daily_Reminder">
       <translation lang="en">Daily Reminder</translation>
       <translation lang="fr">Rappel quotidien</translation>
       <translation lang="es">Recordatorio diario</translation>
+      <translation lang="bo">ཉིན་རེའི་དྲན་གསོ།</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Images">
       <translation lang="en">Images</translation>
       <translation lang="fr">Images</translation>
       <translation lang="es">Imagenes</translation>
       <translation lang="pt">Imagens</translation>
+      <translation lang="bo">འདྲ་པར་ཁག</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Please_Allow">
       <translation lang="en">Please allow this app to send you notifications.</translation>
       <translation lang="fr">Veuillez autoriser cette application à vous envoyer des notifications.</translation>
       <translation lang="ru">Разрешить этому приложению посылать уведомления</translation>
+      <translation lang="bo">ཁྱེད་ལ་མཉེན་ཆས་འདིའི་གསལ་བརྡ་གཏོང་འཇུག་རོགས།</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Please_Allow_Info">
       <translation lang="en">You can get a verse of the day and daily reminders.</translation>
       <translation lang="fr">Vous pouvez recevoir un verset du jour et des rappels quotidiens.</translation>
       <translation lang="ru">Вы можете получать цитату дня и ежедневные оповещения</translation>
+      <translation lang="bo">ཁྱེད་ལ་ཉིན་རེའི་ཤོ་ལོ་ཀ་དང་ཉིན་རེའི་དྲན་གསོ་འབྱོར་ཡོང་།</translation>
     </translation-mapping>
     <translation-mapping id="Song_List_By_Number">
       <translation lang="en">BY NUMBER</translation>
@@ -3237,6 +3417,7 @@
       <translation lang="te">సంఖ్యను బట్టి</translation>
       <translation lang="ko">숫자별</translation>
       <translation lang="ms">IKUT NOMBOR</translation>
+      <translation lang="bo">ཨང་གྲངས་ལྟར།</translation>
     </translation-mapping>
     <translation-mapping id="Song_List_By_Title">
       <translation lang="en">BY TITLE</translation>
@@ -3257,38 +3438,46 @@
       <translation lang="te">శీర్షికను బట్టి</translation>
       <translation lang="ko">제목별</translation>
       <translation lang="ms">IKUT TAJUK</translation>
+      <translation lang="bo">མཚན་བྱང་ལྟར།</translation>
     </translation-mapping>
     <translation-mapping id="Text_On_Image_Title">
       <translation lang="en">Image</translation>
       <translation lang="fr">Image</translation>
       <translation lang="es">Imagen</translation>
       <translation lang="ru">Изображение</translation>
+      <translation lang="bo">འདྲ་པར།</translation>
     </translation-mapping>
     <translation-mapping id="Text_On_Image_Saved">
       <translation lang="en">Image saved</translation>
       <translation lang="fr">Image enregistrée</translation>
       <translation lang="es">Imagen grabada</translation>
       <translation lang="ru">Изображение сохранено</translation>
+      <translation lang="bo">འདྲ་པར་ཉར་ཡོད།</translation>
     </translation-mapping>
     <translation-mapping id="Text_On_Image_Video_Saved">
       <translation lang="en">Video saved</translation>
       <translation lang="fr">Vidéo enregistrée</translation>
+      <translation lang="bo">བརྙན་ཉར་ཡོད།</translation>
     </translation-mapping>
     <translation-mapping id="Text_On_Image_Save_Image">
       <translation lang="en">Save Image</translation>
       <translation lang="fr">Enregistrer image</translation>
+      <translation lang="bo">འདྲ་པར་ཉོར།</translation>
     </translation-mapping>
     <translation-mapping id="Text_On_Image_Save_Video">
       <translation lang="en">Save Video</translation>
       <translation lang="fr">Enregistrer vidéo</translation>
+      <translation lang="bo">བརྙན་ཉོར།</translation>
     </translation-mapping>
     <translation-mapping id="Crop_Image_Title">
       <translation lang="en">Crop Image</translation>
       <translation lang="fr">Recadrer image</translation>
+      <translation lang="bo">འདྲ་པར་གཏུབ།</translation>
     </translation-mapping>
     <translation-mapping id="Edit_Text_On_Image_Title">
       <translation lang="en">Edit Text</translation>
       <translation lang="fr">Modifier texte</translation>
+      <translation lang="bo">ཡིག་ཆ་སྒྲིག</translation>
     </translation-mapping>
     <translation-mapping id="Book_Group_OT">
       <translation lang="en">Old Testament</translation>
@@ -3309,6 +3498,7 @@
       <translation lang="hi">पुराना नियम</translation>
       <translation lang="te">పాత నిబంధన</translation>
       <translation lang="ko">구약</translation>
+      <translation lang="bo">དམ་པའི་གསུང་རབ་རྙིང་མ།</translation>
     </translation-mapping>
     <translation-mapping id="Book_Group_NT">
       <translation lang="en">New Testament</translation>
@@ -3329,6 +3519,7 @@
       <translation lang="hi">नया नियम</translation>
       <translation lang="te">క్రొత్త నిబంధన</translation>
       <translation lang="ko">신약</translation>
+      <translation lang="bo">དམ་པའི་གསུང་རབ་གསར་མ།</translation>
     </translation-mapping>
     <translation-mapping id="Book_Group_DC">
       <translation lang="en">Deuterocanonical</translation>
@@ -3348,6 +3539,7 @@
       <translation lang="hi">अपोक्रिफा</translation>
       <translation lang="te">డ్యూటెరోకేనానికల్</translation>
       <translation lang="fa">اضافه شده</translation>
+      <translation lang="bo">ཟུང་ལྡན།</translation>
     </translation-mapping>
     <translation-mapping id="Layout_Single_Pane">
       <translation lang="en">Single Pane</translation>
@@ -3362,6 +3554,7 @@
       <translation lang="hi">एक पैनल</translation>
       <translation lang="te">ఒక ప్యానెల్</translation>
       <translation lang="ko">하나의 단</translation>
+      <translation lang="bo">གཅིག་ཤར།</translation>
     </translation-mapping>
     <translation-mapping id="Layout_Two_Pane">
       <translation lang="en">Two Pane</translation>
@@ -3376,6 +3569,7 @@
       <translation lang="hi">दो पैनल</translation>
       <translation lang="te">రెండు ప్యానెల్స్</translation>
       <translation lang="ko">두개의 단</translation>
+      <translation lang="bo">གཉིས་ཤར།</translation>
     </translation-mapping>
     <translation-mapping id="Layout_Interlinear">
       <translation lang="en">Verse by Verse</translation>
@@ -3390,6 +3584,7 @@
       <translation lang="hi">आयत बय आयत</translation>
       <translation lang="te">వచనం తరవాత వచనం</translation>
       <translation lang="ko">절별</translation>
+      <translation lang="bo">ཤོ་ལོ་ཀ་གཅིག་ནས་གཅིག་བརྒྱུད།</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert">
       <translation lang="en">Insert Marker</translation>
@@ -3405,6 +3600,7 @@
       <translation lang="hi">निशान डालें</translation>
       <translation lang="te">గురుతు పెట్టండి</translation>
       <translation lang="ko">마커 삽입</translation>
+      <translation lang="bo">མཚམས་རྟགས་ཞོག</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_Paragraph">
       <translation lang="en">Paragraph (\\p)</translation>
@@ -3420,6 +3616,7 @@
       <translation lang="hi">अनुच्छेद (\p)</translation>
       <translation lang="te">పేరా (\\ p)</translation>
       <translation lang="ko">단락 (\\p)</translation>
+      <translation lang="bo">དུམ་ཚན། (\\p)</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_Poetry">
       <translation lang="en">Poetry (\\q1)</translation>
@@ -3434,6 +3631,7 @@
       <translation lang="ar">الشعر (\\q1)</translation>
       <translation lang="hi">कविता  (\q1)</translation>
       <translation lang="te">కవిత్వం (\q1)</translation>
+      <translation lang="bo">སྙན་ངག (\\q1)</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_SubHeading">
       <translation lang="en">Sub Heading (\\s)</translation>
@@ -3449,6 +3647,7 @@
       <translation lang="hi">उप शीर्षक (\s)</translation>
       <translation lang="te">ఉపశీర్షిక (\s)</translation>
       <translation lang="ko">부제 (\\s)</translation>
+      <translation lang="bo">ནང་གསེས་འགོ་འདྲེན། (\\s)</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_Footnote">
       <translation lang="en">Footnote (\\f ...\\f*)</translation>
@@ -3464,6 +3663,7 @@
       <translation lang="hi">पाद लेख (\f... \f*)</translation>
       <translation lang="te">ఫుట్‌నోట్ (\f... \f*)</translation>
       <translation lang="ko">각주 (\\f ...\\f*)</translation>
+      <translation lang="bo">ཞབས་མཆན། (\\f ...\\f*)</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_Other">
       <translation lang="en">Other (\\)</translation>
@@ -3480,6 +3680,7 @@
       <translation lang="hi">अन्य  (\\)</translation>
       <translation lang="te">ఇతర (\\)</translation>
       <translation lang="ko">추가 (\\)</translation>
+      <translation lang="bo">གཞན། (\\)</translation>
     </translation-mapping>
     <translation-mapping id="Text_Copied">
       <translation lang="en">Text copied</translation>
@@ -3500,6 +3701,7 @@
       <translation lang="te">వాక్యం కాపీ చేయబడింది</translation>
       <translation lang="ko">본문 복사됨</translation>
       <translation lang="ms">Teks yang disalin</translation>
+      <translation lang="bo">ཡིག་ཆ་ངོ་བཤུ་བྱས་ཡོད།</translation>
     </translation-mapping>
     <translation-mapping id="Version_Number">
       <translation lang="en">Version %s</translation>
@@ -3519,6 +3721,7 @@
       <translation lang="te">పాఠాంతరం % s</translation>
       <translation lang="ko">버전 %s</translation>
       <translation lang="ms">Versi %s</translation>
+      <translation lang="bo">ཐོན་རིམ་གྱི་བརྒྱ་ཆ་%</translation>
     </translation-mapping>
     <translation-mapping id="Security_Calculator">
       <translation lang="en">Calculator</translation>
@@ -3528,6 +3731,7 @@
       <translation lang="pt">Calculadora</translation>
       <translation lang="hi">कैलकुलेटर</translation>
       <translation lang="te">క్యాలిక్యులేటర్</translation>
+      <translation lang="bo">རྩིས་ཆས།</translation>
     </translation-mapping>
     <translation-mapping id="Security_Device_Id">
       <translation lang="en">Device ID</translation>
@@ -3540,6 +3744,7 @@
       <translation lang="hi">डिवाइस पहचान (आईडी ID)</translation>
       <translation lang="te">పరికరం ID</translation>
       <translation lang="ms">ID peranti</translation>
+      <translation lang="bo">སྒྲིག་ཆས་དེའི་ID</translation>
     </translation-mapping>
     <translation-mapping id="Security_Enter_PIN">
       <translation lang="en">Please enter your PIN</translation>
@@ -3551,6 +3756,7 @@
       <translation lang="ar">رجاءاً أدخل كلمة التثبيت</translation>
       <translation lang="hi">कृपया अपना पिन कोड दर्ज करें</translation>
       <translation lang="te">దయచేసి మీ PINని నమోదు చేయండి</translation>
+      <translation lang="bo">PIN གསང་ཨང་འཇུག་རོགས།</translation>
     </translation-mapping>
     <translation-mapping id="Security_Incorrect_PIN">
       <translation lang="en">Incorrect PIN</translation>
@@ -3563,6 +3769,7 @@
       <translation lang="hi">गलत पिन कोड</translation>
       <translation lang="te">PINలో తప్పు ఉంది</translation>
       <translation lang="ko">정확하지 않은 PIN 번호 입니다</translation>
+      <translation lang="bo">PIN གསང་ཨང་ནོར་འདུག</translation>
     </translation-mapping>
     <translation-mapping id="Language_en">
       <translation lang="en">English</translation>
@@ -3582,6 +3789,7 @@
       <translation lang="hi">अंग्रेजी</translation>
       <translation lang="te">ఆంగ్లము</translation>
       <translation lang="ko">영어</translation>
+      <translation lang="bo">ཨིན་ཇིའི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_fr">
       <translation lang="en">French</translation>
@@ -3599,6 +3807,7 @@
       <translation lang="hi">फ्रांसीसी</translation>
       <translation lang="te">ఫ్రెంచ్</translation>
       <translation lang="ko">프랑스어</translation>
+      <translation lang="bo">ཧྥ་རན་སིའི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_ar">
       <translation lang="en">Arabic</translation>
@@ -3611,6 +3820,7 @@
       <translation lang="ko">아랍어</translation>
       <translation lang="es">Árabe</translation>
       <translation lang="ru">Арабский</translation>
+      <translation lang="bo">ཨ་རབ་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_de">
       <translation lang="en">German</translation>
@@ -3624,6 +3834,7 @@
       <translation lang="fa">آلمانی</translation>
       <translation lang="ko">독일어</translation>
       <translation lang="ru">Немецкий</translation>
+      <translation lang="bo">འཇར་མན་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_id">
       <translation lang="en">Indonesian</translation>
@@ -3641,18 +3852,21 @@
       <translation lang="hi">इन्डोनेशियाई</translation>
       <translation lang="te">ఇండోనేషియన్</translation>
       <translation lang="ko">인도네시아어</translation>
+      <translation lang="bo">ཧིན་དྷི་ནི་ཤི་ཡའི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_ko">
       <translation lang="en">Korean</translation>
       <translation lang="fr">Coréen</translation>
       <translation lang="es">Coreano</translation>
       <translation lang="ru">Корейский</translation>
+      <translation lang="bo">ཀོ་རི་ཡའི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_ms">
       <translation lang="en">Bahasa Melayu</translation>
       <translation lang="fr">Bahasa Melayu</translation>
       <translation lang="es">Bahasa Melayu</translation>
       <translation lang="ru">Малайский</translation>
+      <translation lang="bo">བྷ་ཧ་ས་མེས་ལ་ཡིའི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_pt">
       <translation lang="en">Portuguese</translation>
@@ -3670,6 +3884,7 @@
       <translation lang="hi">पुर्तगाली</translation>
       <translation lang="te">పోర్చుగీస్</translation>
       <translation lang="ko">푸르투갈어</translation>
+      <translation lang="bo">ཕོར་ཆུ་གྷའི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_ru">
       <translation lang="en">Russian</translation>
@@ -3687,6 +3902,7 @@
       <translation lang="hi">रूसी</translation>
       <translation lang="te">రష్యన్</translation>
       <translation lang="ko">러시아어</translation>
+      <translation lang="bo">ཨུ་རུ་སིའི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_es">
       <translation lang="en">Spanish</translation>
@@ -3704,6 +3920,7 @@
       <translation lang="hi">स्पेनिश</translation>
       <translation lang="te">స్పానిష్</translation>
       <translation lang="ko">스페인어</translation>
+      <translation lang="bo">སི་པན་གྱི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_tr">
       <translation lang="en">Turkish</translation>
@@ -3720,6 +3937,7 @@
       <translation lang="hi">तुर्की</translation>
       <translation lang="te">టర్కిష్</translation>
       <translation lang="ko">터키어</translation>
+      <translation lang="bo">ཏིར་ཀིའི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_fa">
       <translation lang="en">Farsi</translation>
@@ -3735,6 +3953,7 @@
       <translation lang="fa">فارسی</translation>
       <translation lang="ko">페르시아어</translation>
       <translation lang="ru">Фарси</translation>
+      <translation lang="bo">ཧྥར་སིའི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_uk">
       <translation lang="en">Ukrainian</translation>
@@ -3752,6 +3971,7 @@
       <translation lang="hi">यूक्रेनी</translation>
       <translation lang="te">ఉక్రేని</translation>
       <translation lang="ko">우크라이너어</translation>
+      <translation lang="bo">ཡུས་ཁུ་རན་གྱི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_zh">
       <translation lang="en">Chinese (Simplified)</translation>
@@ -3770,6 +3990,7 @@
       <translation lang="hi">चीनी</translation>
       <translation lang="te">చైనీస్</translation>
       <translation lang="ko">중국어</translation>
+      <translation lang="bo">རྒྱ་ནག་གི་སྐད་ཡིག (གསར་མ།)</translation>
     </translation-mapping>
     <translation-mapping id="Language_hi">
       <translation lang="en">Hindi</translation>
@@ -3784,6 +4005,7 @@
       <translation lang="ar">هندية</translation>
       <translation lang="hi">हिंदी</translation>
       <translation lang="te">హిందీ</translation>
+      <translation lang="bo">ཧིན་དྷིའི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_mal">
       <translation lang="en">Malayalam</translation>
@@ -3798,12 +4020,14 @@
       <translation lang="ar">ملايالم</translation>
       <translation lang="hi">मलयालम</translation>
       <translation lang="te">మలయాళం</translation>
+      <translation lang="bo">མ་ལ་ཡ་ལམ་གྱི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_te">
       <translation lang="en">Telugu</translation>
       <translation lang="fr">Télougou</translation>
       <translation lang="es">Telugu</translation>
       <translation lang="ru">Телугу</translation>
+      <translation lang="bo">ཏེ་ལུ་གུའི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_vi">
       <translation lang="en">Vietnamese</translation>
@@ -3818,6 +4042,7 @@
       <translation lang="te">వియత్నామీస్</translation>
       <translation lang="fa">ویتنامی</translation>
       <translation lang="ru">Вьетнамский</translation>
+      <translation lang="bo">ཝེ་ཐི་ནམ་གྱི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Language_az">
       <translation lang="en">Azerbaijani</translation>
@@ -3829,6 +4054,7 @@
       <translation lang="ko">아제르바이잔어</translation>
       <translation lang="es">Azerbaiyán</translation>
       <translation lang="ru">Азербайджанский</translation>
+      <translation lang="bo">ཨ་ཟར་བྷ་ཇ་ནའི་སྐད་ཡིག</translation>
     </translation-mapping>
     <translation-mapping id="Chapter_Introduction_Title">
       <translation lang="en">Introduction</translation>
@@ -3849,6 +4075,7 @@
       <translation lang="hi">परिचय</translation>
       <translation lang="te">పరిచయం</translation>
       <translation lang="ms">Pengenalan</translation>
+      <translation lang="bo">ངོ་སྤྲོད།</translation>
     </translation-mapping>
     <translation-mapping id="Chapter_Introduction_Symbol">
       <translation lang="en">i</translation>
@@ -3869,6 +4096,7 @@
       <translation lang="hi">प.</translation>
       <translation lang="te">ప</translation>
       <translation lang="ms">i</translation>
+      <translation lang="bo">i</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Glossary_Words">
       <translation lang="en">Show glossary words</translation>
@@ -3878,6 +4106,7 @@
       <translation lang="fa">نمایش دادن واژه نامه</translation>
       <translation lang="es">Mostrar palabras del glosario</translation>
       <translation lang="ru">Показывать слова из словаря</translation>
+      <translation lang="bo">ཚིག་མཛོད་སྟོན།</translation>
     </translation-mapping>
     <translation-mapping id="Security_Permission_Denied">
       <translation lang="en">This device does not have permission to use this app.</translation>
@@ -3893,6 +4122,9 @@
       <translation lang="fr">afin que nous puissions enregistrer les images que vous créez</translation>
       <translation lang="es">para que podamos guardar las imágenes que crea</translation>
     </translation-mapping>
+    <translation-mapping id="Language_bo">
+      <translation lang="en">Tibetan</translation>
+    </translation-mapping>
   </translation-mappings>
 
   <images type="launcher">
@@ -3900,16 +4132,29 @@
     <image width="72" height="72">drawable-hdpi\ic_launcher.png</image>
     <image width="96" height="96">drawable-xhdpi\ic_launcher.png</image>
     <image width="144" height="144">drawable-xxhdpi\ic_launcher.png</image>
-    <image width="192" height="192">drawable-xxxhdpi\ic_launcher.png</image>
     <image width="512" height="512">drawable-web\ic_launcher.png</image>
+    <image width="825" height="414">drawable-xxxhdpi\ic_launcher.png</image>
+  </images>
+
+  <images type="notification">
+    <image width="825" height="414">drawable-xxxhdpi\ic_notification.png</image>
+  </images>
+
+  <images type="illustration">
+    <image width="825" height="414">Page_001.png</image>
+    <image width="1223" height="2000">zap12.png</image>
+  </images>
+
+  <images type="drawer">
+    <image width="825" height="414">drawable-hdpi\nav_drawer.png</image>
   </images>
 
   <adaptive-icon>
-    <foreground inset="23.30%">
+    <foreground inset="19.50%">
       <image>ic_launcher_foreground.png</image>
     </foreground>
     <background>
-      <color value="#FFFFFF"/>
+      <color value="#f6fffe"/>
     </background>
   </adaptive-icon>
 </app-definition>
